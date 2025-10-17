@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class KafkaProducer {
+        // This class is responsible for PUBLISHING transaction events
+
     private final String topic;
     private final KafkaTemplate<String, Transaction> kafkaTemplate;
 
@@ -20,3 +22,5 @@ public class KafkaProducer {
         kafkaTemplate.send(topic, new Transaction(Long.parseLong(transactionData[0]), Long.parseLong(transactionData[1]), Float.parseFloat(transactionData[2])));
     }
 }
+
+///will this get pushed
